@@ -1,0 +1,28 @@
+{
+  "name": "enhanced-authentication-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0",
+    "express-session": "^1.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.3",
+    "nodemailer": "^6.9.13",
+    "passport": "^0.7.0",
+    "passport-google-oauth2": "^0.2.0",
+    "uuid": "^9.0.1"
+  }
+}
