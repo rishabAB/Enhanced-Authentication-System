@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const cors = require("cors");
-const bcrypt=require('bcrypt');
+const bcrypt=require('bcryptjs');
 const { v4: uuidv4 } = require('uuid');
 
 const { rateLimit } =require('express-rate-limit');
