@@ -11,7 +11,7 @@ const SECRET_KEY=process.env.SECRET_KEY;
 const app = express();
 
 app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb' }));
+// app.use(express.urlencoded({ limit: '50mb' }));
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
