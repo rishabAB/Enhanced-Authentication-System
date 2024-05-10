@@ -11,39 +11,39 @@ const SECRET_KEY=process.env.SECRET_KEY;
 const app = express();
 
 app.use(express.json({ limit: '50mb' }));
-// app.use(express.urlencoded({ limit: '50mb' }));
+
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const cors = require("cors");
-const bcrypt=require('bcryptjs');
+const bcrypt=require('bcrypt');
 const { v4: uuidv4 } = require('uuid');
 
 const { rateLimit } =require('express-rate-limit');
 const mailer = require('nodemailer');
 
-// const limiter = rateLimit({
-// 	windowMs: 1 * 60 * 1000, // 1 minute
-// 	limit: 10, // for each minute we could receive 5 requests
-// 	standardHeaders: 'draft-7',
-// 	legacyHeaders: false, 
-// 	message: "Too many requests please try again later"
-// });
-// app.use(limiter);
+const limiter = rateLimit({
+	windowMs: 1 * 60 * 1000, // 1 minute
+	limit: 20, // for each minute we could receive 20 requests
+	standardHeaders: 'draft-7',
+	legacyHeaders: false, 
+	message: "Too many requests please try again later"
+});
+app.use(limiter);
 
 app.listen(7000, () => {
     console.log("server is up to 7000")
 })
-// freedb_auth_db
-// root_1
+
 // ----Mysql connection---------
+
 const connection = mysql.createConnection({
-     host: "sql.freedb.tech", 
-     user: "freedb_root_1", 
-     password: "fe9?7Rvyd9SV%p%",
-      database: "freedb_auth_db",
+     host: "localhost", 
+     user: "root", 
+     password: "password",
+      database: "auth",
        port: "3306"
      })
 
